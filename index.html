@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ScanDine | QR Restaurant Menus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- Global Navbar -->
+      <header class="navbar">
+        <div class="navbar-left">
+          <img src="assets/scandine-logo.png" alt="ScanDine" class="brand-logo" />
+          <div class="brand-text">
+            <span class="brand-name">ScanDine</span>
+            <span class="brand-tagline">QR Menus for Modern Restaurants</span>
+          </div>
+        </div>
+        <nav class="navbar-center">
+          <button class="nav-link nav-link--active" data-route="home">
+            Home
+          </button>
+          <button class="nav-link" data-route="restaurants">
+            Restaurants
+          </button>
+          <button class="nav-link" data-route="about">About</button>
+          <button class="nav-link" data-route="pricing">Subscription</button>
+        </nav>
+        <div class="navbar-right">
+          <button class="link-btn" data-route="login">Login</button>
+          <button class="btn btn-sm btn-outline" data-route="signup">
+            Sign up
+          </button>
+          <button class="btn btn-sm btn-accent" data-route="add-restaurant">
+            Add Your Restaurant
+          </button>
+        </div>
+      </header>
+
+      <main class="page">
+        <!-- CUSTOMER HOME -->
+        <section id="view-home" class="view view--active">
+          <!-- Hero -->
+          <div class="home-hero">
+            <div class="home-hero-bg"></div>
+            <div class="hero-inner">
+              <div class="hero-content">
+                <div class="hero-badge">All‑in‑one QR menu platform</div>
+                <h1 class="hero-title">
+                  Power every table with a
+                  <span class="hero-highlight">digital menu</span>
+                </h1>
+                <p class="hero-subtitle">
+                  ScanDine gives guests a beautiful, lightning‑fast menu and gives
+                  you full control over categories, pricing, specials and
+                  table‑wise QR codes from a single dashboard.
+                </p>
+
+                <div class="hero-actions">
+                  <div class="hero-search">
+                    <div class="hero-search-input">
+                      <span class="icon icon-search"></span>
+                      <input
+                        type="text"
+                        id="home-search"
+                        placeholder="Search restaurants, cuisines or dishes"
+                      />
+                    </div>
+                    <button type="button" class="btn btn-primary hero-cta" id="home-search-btn">
+                      Explore live demos
+                    </button>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-outline hero-secondary"
+                    data-route="add-restaurant"
+                  >
+                    Start for your restaurant
+                  </button>
+                </div>
+
+                <div class="hero-trust">
+                  <span class="trust-item">No app download</span>
+                  <span class="trust-dot">•</span>
+                  <span class="trust-item">Brand‑first experience</span>
+                  <span class="trust-dot">•</span>
+                  <span class="trust-item">Works on any smartphone</span>
+                </div>
+              </div>
+              <div class="hero-media">
+                <div class="phone-mock">
+                  <div class="phone-notch"></div>
+                  <div class="phone-screen">
+                    <div class="phone-banner">
+                      <span>Live menu preview</span>
+                      <h3>Table 12 · ScanDine</h3>
+                      <p>Guests see your updated menu in seconds.</p>
+                    </div>
+                    <div class="phone-card-row">
+                      <div class="phone-dish-card">
+                        <div class="badge-pill">Chef's Pick</div>
+                        <h4>Signature Sizzler</h4>
+                        <p>₹640 · Highlighted as special</p>
+                      </div>
+                      <div class="phone-dish-card phone-dish-card--ghost">
+                        <h4>Mango Cheesecake</h4>
+                        <p>₹320 · Today's dessert</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Metrics band -->
+          <section class="home-section home-metrics">
+            <div class="metrics-grid">
+              <div class="metric-card">
+                <div class="metric-icon">🏪</div>
+                <div class="metric-content">
+                  <span class="metric-value">250+</span>
+                  <span class="metric-label">Restaurants powered</span>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon">📊</div>
+                <div class="metric-content">
+                  <span class="metric-value">1.2M+</span>
+                  <span class="metric-label">Orders via ScanDine</span>
+                </div>
+              </div>
+              <div class="metric-card">
+                <div class="metric-icon">♻️</div>
+                <div class="metric-content">
+                  <span class="metric-value">95%</span>
+                  <span class="metric-label">Paper reduction</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Product strip -->
+          <section class="home-section">
+            <div class="home-section-header">
+              <h2>Everything you need for QR‑first dining</h2>
+              <p>One platform, three focused experiences — for guests, staff and owners.</p>
+            </div>
+            <div class="product-cards">
+              <div class="product-card">
+                <div class="product-card-icon">📱</div>
+                <span class="product-card-label">Guest menu</span>
+                <h3>Restaurant menu UI made simple</h3>
+                <p>Beautiful, mobile‑first menu interface with categories, filters and dish imagery guests love to browse.</p>
+              </div>
+              <div class="product-card product-card-featured">
+                <div class="product-card-icon">📲</div>
+                <span class="product-card-label">Table QR engine</span>
+                <h3>Unique QR per table</h3>
+                <p>Generate, download and print table‑wise QR codes in bulk so every scan is tracked to the right table.</p>
+              </div>
+              <div class="product-card">
+                <div class="product-card-icon">⚙️</div>
+                <span class="product-card-label">Menu console</span>
+                <h3>Owner‑friendly admin panel</h3>
+                <p>Add categories, set prices, upload images and tag specials without waiting on designers or printers.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why restaurants choose ScanDine -->
+          <section class="home-section home-section-alt">
+            <div class="home-section-header">
+              <h2>Simple to run, powerful in practice</h2>
+              <p>Designed to feel intuitive for staff while delivering a premium experience to guests.</p>
+            </div>
+            <div class="feature-cards">
+              <div class="feature-card">
+                <div class="feature-card-icon">✨</div>
+                <h3>Simple &amp; powerful</h3>
+                <p>Clean UI, fast load times and a flow that mirrors how guests naturally browse menus.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">🔄</div>
+                <h3>Continuous evolution</h3>
+                <p>Non‑stop improvements to layouts, tags and flows as dining behaviour evolves.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">💰</div>
+                <h3>Honest pricing</h3>
+                <p>Flat subscription with no commissions on in‑restaurant ordering.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-card-icon">🛟</div>
+                <h3>Responsive support</h3>
+                <p>A support team that understands restaurants and resolves issues quickly.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Ecosystem -->
+          <section class="home-section">
+            <div class="home-section-header">
+              <h2>The ScanDine ecosystem</h2>
+              <p>QR menus, table setup and menu management working together for your brand.</p>
+            </div>
+            <div class="ecosystem-cards">
+              <div class="ecosystem-card">
+                <div class="ecosystem-number">01</div>
+                <h3>Guest‑facing experience</h3>
+                <p>Optimised for quick decisions with smart sections, tags and visual hierarchy.</p>
+              </div>
+              <div class="ecosystem-card">
+                <div class="ecosystem-number">02</div>
+                <h3>Restaurant‑side console</h3>
+                <p>Web panel for owners and managers to control categories, items and QR mapping.</p>
+              </div>
+              <div class="ecosystem-card">
+                <div class="ecosystem-number">03</div>
+                <h3>Table &amp; outlet view</h3>
+                <p>Ready for multi‑outlet setups with outlet‑wise menus and table‑wise QR codes.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Use cases -->
+          <section class="home-section home-section-alt">
+            <div class="home-section-header">
+              <h2>What ScanDine can do for you</h2>
+              <p>Adapts to different formats — cafés, fine‑dine, bars or cloud kitchens.</p>
+            </div>
+            <div class="usecase-cards">
+              <div class="usecase-card">
+                <div class="usecase-icon">📈</div>
+                <h3>Boost table revenue</h3>
+                <p>Highlight high‑margin dishes, today's specials and upsell add‑ons visually.</p>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">🌟</div>
+                <h3>Modernise guest experience</h3>
+                <p>Offer a digital menu that matches expectations set by leading food apps.</p>
+              </div>
+              <div class="usecase-card">
+                <div class="usecase-icon">⚡</div>
+                <h3>Reduce operational friction</h3>
+                <p>Eliminate reprinting menus and reduce order‑taking errors with a single source of truth.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Nearby / Affiliated Restaurants -->
+          <section class="home-section">
+            <div class="home-section-header home-section-header-flex">
+              <div>
+                <h2>Nearby &amp; Affiliated Restaurants</h2>
+                <p>Discover QR-enabled restaurants near you</p>
+              </div>
+              <button class="btn btn-outline btn-sm" data-route="restaurants">
+                View all
+              </button>
+            </div>
+            <div class="restaurant-scroll" id="nearby-restaurants"></div>
+          </section>
+
+          <!-- Popular Cafes -->
+          <section class="home-section home-section-alt">
+            <div class="home-section-header">
+              <h2>Popular Cafes</h2>
+              <p>Curated spaces for work, coffee and conversations.</p>
+            </div>
+            <div class="card-grid" id="popular-cafes"></div>
+          </section>
+
+          <!-- Today's Specials -->
+          <section class="home-section">
+            <div class="home-section-header">
+              <h2>Today's Specials</h2>
+              <p>Limited-time dishes from our partner restaurants.</p>
+            </div>
+            <div class="specials-row" id="todays-specials"></div>
+          </section>
+
+          <!-- Footer -->
+          <footer class="footer">
+          <div class="footer-main">
+            <div>
+              <h3>ScanDine</h3>
+                <p>
+                  Modern QR-based menus for premium dining experiences. Designed
+                  for speed, clarity and conversions.
+                </p>
+              </div>
+              <div class="footer-columns">
+                <div>
+                  <h4>Company</h4>
+                  <a href="#" class="footer-link">About</a>
+                  <a href="#" class="footer-link">Contact</a>
+                  <a href="#" class="footer-link">Careers</a>
+                </div>
+                <div>
+                  <h4>Legal</h4>
+                  <a href="#" class="footer-link">Privacy Policy</a>
+                  <a href="#" class="footer-link">Terms of Service</a>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <span>© <span id="year"></span> ScanDine Technologies</span>
+              <span>Made for QR-first restaurants</span>
+            </div>
+          </footer>
+        </section>
+
+        <!-- RESTAURANT LISTING -->
+        <section id="view-restaurants" class="view">
+          <div class="page-header">
+            <div>
+              <h2>Restaurants</h2>
+              <p>
+                Discover QR-enabled partner restaurants near you and across the
+                city.
+              </p>
+            </div>
+            <div class="page-header-actions">
+              <div class="search-inline">
+                <span class="icon icon-search"></span>
+                <input
+                  type="text"
+                  id="restaurant-search"
+                  placeholder="Search by name or cuisine"
+                />
+              </div>
+              <select id="restaurant-sort" class="select-input">
+                <option value="relevance">Sort: Relevance</option>
+                <option value="rating">Sort: Rating</option>
+                <option value="distance">Sort: Distance</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="filters-row">
+            <button class="filter-pill filter-pill--active" data-filter="all">
+              All
+            </button>
+            <button class="filter-pill" data-filter="veg">Pure Veg</button>
+            <button class="filter-pill" data-filter="nonveg">
+              Non-Veg Friendly
+            </button>
+            <button class="filter-pill" data-filter="rating4">
+              4.0+ Rating
+            </button>
+            <button class="filter-pill" data-filter="cafe">Cafes</button>
+          </div>
+
+          <div class="restaurant-grid" id="restaurant-grid"></div>
+        </section>
+
+        <!-- RESTAURANT DETAIL -->
+        <section id="view-restaurant-detail" class="view">
+          <button class="back-link" data-route="restaurants">
+            <span class="icon icon-back"></span>
+            All Restaurants
+          </button>
+
+          <div class="restaurant-banner" id="restaurant-banner">
+            <div class="restaurant-banner-overlay"></div>
+            <div class="restaurant-banner-content">
+              <div>
+                <h1 id="detail-name">Restaurant Name</h1>
+                <p id="detail-tagline">Tagline</p>
+                <div class="restaurant-meta">
+                  <span id="detail-cuisine">Cuisine</span>
+                  <span class="dot-separator">•</span>
+                  <span id="detail-location">Location</span>
+                </div>
+              </div>
+              <div class="restaurant-rating-block">
+                <div class="rating-main">
+                  <span id="detail-rating">4.5</span>
+                  <span class="rating-star">★</span>
+                </div>
+                <span id="detail-rating-count" class="rating-count"
+                  >200+ ratings</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="menu-wrapper">
+            <div class="menu-tabs" id="menu-tabs"></div>
+            <div class="menu-section" id="menu-items"></div>
+          </div>
+        </section>
+
+        <!-- ADD RESTAURANT (ADMIN ENTRY) -->
+        <section id="view-add-restaurant" class="view menu-flow-view">
+          <div class="step-progress">
+            <div class="step-item step-item-active"><span>1</span> Restaurant</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>2</span> Menu</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>3</span> Preview</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>4</span> Tables</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>5</span> QR Codes</div>
+          </div>
+          <button class="step-back-btn" data-route="home">
+            <span class="icon icon-back"></span>
+            Back to Home
+          </button>
+          <div class="page-header menu-flow-header">
+            <div>
+              <h2>Add Your Restaurant</h2>
+              <p>
+                Create a QR-ready profile in minutes. You can set up your menu
+                and tables right after this step.
+              </p>
+            </div>
+          </div>
+
+          <div class="two-column">
+            <form id="add-restaurant-form" class="card form-card">
+              <div class="form-grid">
+                <div class="field">
+                  <label for="r-name">Restaurant name</label>
+                  <input
+                    type="text"
+                    id="r-name"
+                    placeholder="e.g. Urban Grill & Bar"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="r-tagline">Tagline</label>
+                  <input
+                    type="text"
+                    id="r-tagline"
+                    placeholder="e.g. Wood-fired grills & craft cocktails"
+                  />
+                </div>
+                <div class="field">
+                  <label for="r-cuisine">Cuisine type</label>
+                  <input
+                    type="text"
+                    id="r-cuisine"
+                    placeholder="e.g. North Indian, Chinese, Continental"
+                  />
+                </div>
+                <div class="field">
+                  <label for="r-address">Address</label>
+                  <input
+                    type="text"
+                    id="r-address"
+                    placeholder="Street, city, landmark"
+                  />
+                </div>
+                <div class="field">
+                  <label for="r-contact">Contact number</label>
+                  <input
+                    type="tel"
+                    id="r-contact"
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
+                <div class="field">
+                  <label for="r-image">Upload restaurant image</label>
+                  <input type="file" id="r-image" accept="image/*" />
+                  <small class="field-help">
+                    For this demo, the file is not uploaded but the UI behaves
+                    like production.
+                  </small>
+                </div>
+              </div>
+              <div class="form-footer">
+                <button type="submit" class="btn btn-primary">
+                  Save &amp; Continue to Menu
+                </button>
+              </div>
+            </form>
+
+            <aside class="card info-card">
+              <h3>How ScanDine works</h3>
+              <ul class="info-list">
+                <li><strong>1.</strong> Add your restaurant details.</li>
+                <li><strong>2.</strong> Create categories &amp; dishes.</li>
+                <li><strong>3.</strong> Generate table-wise QR codes.</li>
+                <li><strong>4.</strong> Place QR stands on each table.</li>
+              </ul>
+              <p class="info-note">
+                You can always come back and edit your menu — changes reflect
+                instantly on all QR scans.
+              </p>
+            </aside>
+          </div>
+        </section>
+
+        <!-- MENU DASHBOARD (ADMIN) -->
+        <section id="view-menu-dashboard" class="view menu-flow-view">
+          <div class="step-progress">
+            <div class="step-item step-item-done"><span>✓</span> Restaurant</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-active"><span>2</span> Menu</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>3</span> Preview</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>4</span> Tables</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>5</span> QR Codes</div>
+          </div>
+          <button class="step-back-btn" data-route="add-restaurant">
+            <span class="icon icon-back"></span>
+            Back to Restaurant Details
+          </button>
+          <div class="page-header menu-flow-header">
+            <div>
+              <h2>Create Menu</h2>
+              <p>
+                Add categories, dishes and highlight your specials — just like a
+                professional food delivery listing.
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" class="btn btn-outline btn-sm" id="preview-menu-btn">
+                View Menu Preview
+              </button>
+              <button type="button" class="btn btn-accent btn-sm" id="save-menu-btn">
+                Save Menu
+              </button>
+            </div>
+          </div>
+
+          <div class="dashboard-layout">
+            <aside class="card dashboard-sidebar">
+              <div class="sidebar-header">
+                <h3>Categories</h3>
+                <button type="button" class="btn btn-xs btn-outline" id="add-category-btn">
+                  + Add Category
+                </button>
+              </div>
+              <ul id="category-list" class="category-list"></ul>
+            </aside>
+
+            <section class="card dashboard-main">
+              <div id="empty-category-message" class="empty-state">
+                <h3>No category selected</h3>
+                <p>
+                  Create a menu category on the left, then start adding dishes
+                  under it.
+                </p>
+              </div>
+
+              <div id="category-editor" class="category-editor hidden">
+                <header class="category-editor-header">
+                  <div>
+                    <h3 id="editor-category-name">Category</h3>
+                    <p id="editor-category-subtitle">
+                      Add dishes, pricing and highlight your bestsellers.
+                    </p>
+                  </div>
+                  <button type="button" class="btn btn-xs btn-outline" id="rename-category">
+                    Rename
+                  </button>
+                </header>
+
+                <form id="dish-form" class="dish-form">
+                  <div class="form-grid form-grid--two">
+                    <div class="field">
+                      <label for="dish-name">Dish name</label>
+                      <input
+                        type="text"
+                        id="dish-name"
+                        placeholder="e.g. Peri Peri Fries"
+                        required
+                      />
+                    </div>
+                    <div class="field">
+                      <label for="dish-price">Price (₹)</label>
+                      <input
+                        type="number"
+                        id="dish-price"
+                        min="0"
+                        step="1"
+                        placeholder="220"
+                        required
+                      />
+                    </div>
+                    <div class="field field--full">
+                      <label for="dish-description">Description</label>
+                      <textarea
+                        id="dish-description"
+                        rows="2"
+                        placeholder="Short, tempting description shown to customers"
+                      ></textarea>
+                    </div>
+                    <div class="field">
+                      <label for="dish-image">Upload image</label>
+                      <input type="file" id="dish-image" accept="image/*" />
+                    </div>
+                    <div class="field">
+                      <label>Veg / Non-Veg</label>
+                      <div class="toggle-row">
+                        <label class="toggle">
+                          <input
+                            type="checkbox"
+                            id="dish-veg-toggle"
+                            checked
+                          />
+                          <span class="toggle-slider"></span>
+                        </label>
+                        <span id="dish-veg-label">Veg</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="tag-group">
+                    <span>Tags</span>
+                    <label class="tag-checkbox">
+                      <input type="checkbox" value="today-special" />
+                      <span>Today's Special</span>
+                    </label>
+                    <label class="tag-checkbox">
+                      <input type="checkbox" value="our-speciality" />
+                      <span>Our Speciality</span>
+                    </label>
+                    <label class="tag-checkbox">
+                      <input type="checkbox" value="bestseller" />
+                      <span>Bestseller</span>
+                    </label>
+                    <label class="tag-checkbox">
+                      <input type="checkbox" value="new" />
+                      <span>New Item</span>
+                    </label>
+                  </div>
+
+                  <div class="form-footer form-footer--space">
+                    <button type="submit" class="btn btn-primary">
+                      Add Dish
+                    </button>
+                  </div>
+                </form>
+
+                <div class="dish-list" id="dish-list"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <!-- MENU PREVIEW (CUSTOMER-SIDE VIEW OF CREATED MENU) -->
+        <section id="view-menu-preview" class="view menu-flow-view">
+          <div class="step-progress">
+            <div class="step-item step-item-done"><span>✓</span> Restaurant</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Menu</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-active"><span>3</span> Preview</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>4</span> Tables</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>5</span> QR Codes</div>
+          </div>
+          <button class="step-back-btn" data-route="menu-dashboard">
+            <span class="icon icon-back"></span>
+            Back to Menu Editor
+          </button>
+          <div class="page-header menu-flow-header">
+            <div>
+              <h2 id="preview-restaurant-name">Restaurant menu preview</h2>
+              <p id="preview-restaurant-tagline">
+                This is how guests will see your menu after scanning the QR.
+              </p>
+            </div>
+            <div class="flex gap-2">
+              <button type="button" class="btn btn-outline step-back-btn-inline" data-route="menu-dashboard">
+                <span class="icon icon-back"></span>
+                Back to Editor
+              </button>
+              <button type="button" class="btn btn-accent btn-sm" id="preview-to-tables-btn">
+                Continue to Table Setup
+              </button>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div>
+                <h3 class="text-sm font-semibold text-slate-900">
+                  Category-wise digital menu
+                </h3>
+                <p class="mt-1 text-xs text-slate-600">
+                  Categories with images, descriptions and prices — optimised for
+                  mobile guests.
+                </p>
+              </div>
+              <span class="pill pill-soft text-xs">Menu preview</span>
+            </div>
+          </div>
+
+          <div id="preview-menu-container" class="space-y-4"></div>
+        </section>
+
+        <!-- QR SETUP (TABLES) -->
+        <section id="view-qr-setup" class="view menu-flow-view">
+          <div class="step-progress">
+            <div class="step-item step-item-done"><span>✓</span> Restaurant</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Menu</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Preview</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-active"><span>4</span> Tables</div>
+            <div class="step-connector"></div>
+            <div class="step-item"><span>5</span> QR Codes</div>
+          </div>
+          <button class="step-back-btn" data-route="menu-preview">
+            <span class="icon icon-back"></span>
+            Back to Menu Preview
+          </button>
+          <div class="page-header menu-flow-header">
+            <div>
+              <h2>Table Setup</h2>
+              <p>
+                Define how many tables your restaurant has. We'll generate a
+                unique QR code for each table.
+              </p>
+            </div>
+          </div>
+
+          <form id="table-setup-form" class="card form-card form-card--narrow">
+            <div class="field">
+              <label for="table-count">Number of tables in restaurant</label>
+              <input
+                type="number"
+                id="table-count"
+                min="1"
+                max="100"
+                placeholder="e.g. 20"
+                required
+              />
+            </div>
+            <p class="field-help">
+              You can always re-generate codes if the table layout changes.
+            </p>
+            <div class="form-footer">
+              <button type="submit" class="btn btn-primary">
+                Generate QR Codes
+              </button>
+            </div>
+          </form>
+        </section>
+
+        <!-- QR DISPLAY GRID -->
+        <section id="view-qr-display" class="view menu-flow-view">
+          <div class="step-progress">
+            <div class="step-item step-item-done"><span>✓</span> Restaurant</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Menu</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Preview</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-done"><span>✓</span> Tables</div>
+            <div class="step-connector step-connector-done"></div>
+            <div class="step-item step-item-active"><span>5</span> QR Codes</div>
+          </div>
+          <button class="step-back-btn" data-route="qr-setup">
+            <span class="icon icon-back"></span>
+            Back to Table Setup
+          </button>
+          <div class="page-header menu-flow-header">
+            <div>
+              <h2>QR Codes per Table</h2>
+              <p>
+                Download or print these QR codes and place them on the
+                corresponding tables.
+              </p>
+            </div>
+          </div>
+
+          <div id="qr-grid" class="qr-grid"></div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="view-about" class="view">
+          <!-- Hero Section -->
+          <div class="about-hero">
+            <div class="about-hero-content">
+              <div class="about-badge">
+                <span>About ScanDine</span>
+              </div>
+              <h1 class="about-hero-title">Transforming dining experiences, one QR code at a time</h1>
+              <p class="about-hero-subtitle">
+                ScanDine is a QR-first menu platform helping restaurants deliver
+                modern, app-quality digital menu experiences directly at the table.
+                We empower restaurants to own their digital presence while providing
+                guests with seamless, beautiful menu experiences.
+              </p>
+            </div>
+            <div class="about-hero-visual">
+              <div class="about-visual-card">
+                <div class="visual-icon">📱</div>
+                <p>QR-First</p>
+              </div>
+              <div class="about-visual-card">
+                <div class="visual-icon">⚡</div>
+                <p>Lightning Fast</p>
+              </div>
+              <div class="about-visual-card">
+                <div class="visual-icon">🎨</div>
+                <p>Beautiful Design</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Section -->
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-icon">🏪</div>
+              <div class="stat-number">250+</div>
+              <div class="stat-label">Restaurants</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">📊</div>
+              <div class="stat-number">1.2M+</div>
+              <div class="stat-label">Orders Processed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">♻️</div>
+              <div class="stat-number">95%</div>
+              <div class="stat-label">Paper Reduction</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">⭐</div>
+              <div class="stat-number">4.8/5</div>
+              <div class="stat-label">Average Rating</div>
+            </div>
+          </div>
+
+          <!-- Mission Section -->
+          <div class="about-section">
+            <div class="section-header">
+              <h2>Our Mission</h2>
+              <p>Empowering restaurants to deliver exceptional digital dining experiences</p>
+            </div>
+            <div class="mission-grid">
+              <div class="mission-card">
+                <div class="mission-icon">🎯</div>
+                <h3>Built for modern hospitality</h3>
+                <p>
+                  Guests expect digital, fast and visually rich menus. ScanDine
+                  brings the best of food delivery UX inside your restaurant
+                  without ceding control to aggregators.
+                </p>
+                <ul class="mission-list">
+                  <li>✓ Beautiful, mobile-first menu experiences</li>
+                  <li>✓ Real-time updates to dishes and pricing</li>
+                  <li>✓ Table-wise analytics and insights</li>
+                </ul>
+              </div>
+              <div class="mission-card">
+                <div class="mission-icon">💡</div>
+                <h3>Why restaurants choose us</h3>
+                <p>
+                  We understand the challenges restaurants face. That's why we've
+                  built a platform that puts you in control while delivering
+                  exceptional guest experiences.
+                </p>
+                <ul class="mission-list">
+                  <li>✓ No commissions — simple subscription model</li>
+                  <li>✓ Works on any device with a browser</li>
+                  <li>✓ Brand-first, not platform-first</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Values Section -->
+          <div class="about-section about-section-alt">
+            <div class="section-header">
+              <h2>Our Values</h2>
+              <p>The principles that guide everything we do</p>
+            </div>
+            <div class="values-grid">
+              <div class="value-card">
+                <div class="value-icon">🚀</div>
+                <h4>Innovation</h4>
+                <p>Continuously evolving our platform to meet the changing needs of modern restaurants</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h4>Partnership</h4>
+                <p>We're not just a vendor — we're your partner in success, supporting you every step of the way</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">🔒</div>
+                <h4>Security</h4>
+                <p>Your data is encrypted and secure. We never share your restaurant information</p>
+              </div>
+              <div class="value-card">
+                <div class="value-icon">💚</div>
+                <h4>Sustainability</h4>
+                <p>Helping restaurants reduce paper waste while improving operational efficiency</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonials Section -->
+          <div class="about-section">
+            <div class="section-header">
+              <h2>What Our Partners Say</h2>
+              <p>Real feedback from restaurants using ScanDine</p>
+            </div>
+            <div class="testimonials-grid">
+              <div class="testimonial-card testimonial-featured">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  ScanDine helped us retire paper menus and reduce order errors,
+                  while keeping guests on our brand. The setup was incredibly easy
+                  and our guests love the experience.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">OP</div>
+                  <div>
+                    <div class="author-name">Operations Head</div>
+                    <div class="author-role">Premium casual-dining chain</div>
+                  </div>
+                </div>
+                <div class="testimonial-rating">★★★★★</div>
+              </div>
+              <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  The analytics feature is a game-changer. We can now see which
+                  tables are most engaged and optimize our menu accordingly.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">RM</div>
+                  <div>
+                    <div class="author-name">Restaurant Manager</div>
+                    <div class="author-role">Multi-outlet restaurant group</div>
+                  </div>
+                </div>
+                <div class="testimonial-rating">★★★★★</div>
+              </div>
+              <div class="testimonial-card">
+                <div class="testimonial-quote">"</div>
+                <p class="testimonial-text">
+                  Setting up our menu took less than 30 minutes. The interface
+                  is intuitive and our staff picked it up immediately.
+                </p>
+                <div class="testimonial-author">
+                  <div class="author-avatar">CO</div>
+                  <div>
+                    <div class="author-name">Café Owner</div>
+                    <div class="author-role">Independent café</div>
+                  </div>
+                </div>
+                <div class="testimonial-rating">★★★★★</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Section -->
+          <div class="about-cta">
+            <div class="cta-content">
+              <h2>Ready to transform your restaurant?</h2>
+              <p>Join hundreds of restaurants already using ScanDine to deliver exceptional dining experiences</p>
+              <div class="cta-buttons">
+                <button type="button" class="btn btn-primary" data-route="signup">
+                  Get Started Free
+                </button>
+                <button type="button" class="btn btn-outline" data-route="pricing">
+                  View Pricing
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SUBSCRIPTION / PRICING -->
+        <section id="view-pricing" class="view">
+          <div class="page-header">
+            <div>
+              <h2>Subscription Plans</h2>
+              <p>
+                Simple, transparent pricing. No commissions. Scale from a single
+                café to multi-location brands.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid gap-5 md:grid-cols-3">
+            <div
+              class="flex flex-col rounded-2xl bg-white/95 p-5 shadow-md shadow-slate-900/10"
+            >
+              <p class="text-xs font-semibold uppercase text-slate-500">
+                Starter
+              </p>
+              <p class="mt-2 text-2xl font-semibold text-slate-900">
+                ₹799<span class="text-sm font-normal text-slate-500">
+                  / month</span
+                >
+              </p>
+              <p class="mt-1 text-xs text-slate-500">
+                Ideal for cafés and small restaurants up to 15 tables.
+              </p>
+              <ul class="mt-3 flex-1 space-y-1 text-sm text-slate-700">
+                <li>• Up to 1 outlet</li>
+                <li>• Unlimited menu updates</li>
+                <li>• Basic analytics</li>
+              </ul>
+              <button
+                type="button"
+                class="mt-4 w-full rounded-full border border-slate-200 py-2 text-sm font-medium text-slate-800"
+              >
+                Talk to sales
+              </button>
+            </div>
+
+            <div
+              class="flex flex-col rounded-2xl bg-slate-900 p-5 text-slate-50 shadow-xl ring-2 ring-orange-400/70"
+            >
+              <p class="text-xs font-semibold uppercase text-amber-300">
+                Most Popular
+              </p>
+              <p class="mt-2 text-2xl font-semibold">
+                ₹1,999<span class="text-sm font-normal text-slate-300">
+                  / month</span
+                >
+              </p>
+              <p class="mt-1 text-xs text-slate-300">
+                For full-service restaurants and bars up to 40 tables.
+              </p>
+              <ul class="mt-3 flex-1 space-y-1 text-sm text-slate-100/90">
+                <li>• Up to 3 outlets</li>
+                <li>• Advanced menu tagging &amp; upsell</li>
+                <li>• Table-level analytics &amp; exports</li>
+              </ul>
+              <button
+                type="button"
+                class="mt-4 w-full rounded-full bg-orange-500 py-2 text-sm font-semibold text-white"
+              >
+                Get started
+              </button>
+            </div>
+
+            <div
+              class="flex flex-col rounded-2xl bg-white/95 p-5 shadow-md shadow-slate-900/10"
+            >
+              <p class="text-xs font-semibold uppercase text-slate-500">
+                Enterprise
+              </p>
+              <p class="mt-2 text-2xl font-semibold text-slate-900">
+                Custom
+              </p>
+              <p class="mt-1 text-xs text-slate-500">
+                Multi-city brands, hotel chains, and cloud-kitchen networks.
+              </p>
+              <ul class="mt-3 flex-1 space-y-1 text-sm text-slate-700">
+                <li>• Unlimited outlets</li>
+                <li>• Custom integrations (POS, CRM)</li>
+                <li>• Dedicated success manager</li>
+              </ul>
+              <button
+                type="button"
+                class="mt-4 w-full rounded-full border border-slate-200 py-2 text-sm font-medium text-slate-800"
+              >
+                Schedule a demo
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- LOGIN PAGE -->
+        <section id="view-login" class="view auth-view">
+          <div class="auth-container">
+            <div class="auth-left">
+              <button class="back-link auth-back" data-route="home">
+                <span class="icon icon-back"></span>
+                Back to Home
+              </button>
+              <div class="auth-header">
+                <div class="auth-logo">
+                  <div class="brand-mark">SD</div>
+                </div>
+                <h1 class="auth-title">Welcome back</h1>
+                <p class="auth-subtitle">Sign in to manage your restaurant menus and QR codes</p>
+              </div>
+
+              <form id="login-form" class="auth-form">
+                <div class="form-group">
+                  <label for="login-email" class="form-label">Email address</label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">✉</span>
+                    <input
+                      type="email"
+                      id="login-email"
+                      class="form-input"
+                      placeholder="your@email.com"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="login-password" class="form-label">Password</label>
+                  <div class="input-wrapper">
+                    <span class="input-icon">🔒</span>
+                    <input
+                      type="password"
+                      id="login-password"
+                      class="form-input"
+                      placeholder="Enter your password"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <div class="form-options">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="remember-me" />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">Remember me</span>
+                  </label>
+                  <a href="#" class="forgot-link">Forgot password?</a>
+                </div>
+
+                <button type="submit" class="auth-btn auth-btn-primary">
+                  Sign In
+                </button>
+
+                <div class="auth-divider">
+                  <span>or</span>
+                </div>
+
+                <p class="auth-switch">
+                  Don't have an account?
+                  <button type="button" class="auth-link" data-route="signup">
+                    Sign up here
+                  </button>
+                </p>
+              </form>
+            </div>
+
+            <div class="auth-right">
+              <div class="auth-features">
+                <h3>Why login?</h3>
+                <div class="feature-list">
+                  <div class="feature-item">
+                    <div class="feature-icon">📋</div>
+                    <div>
+                      <h4>Manage menus</h4>
+                      <p>Update dishes, prices, and categories anytime</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <div>
+                      <h4>Track analytics</h4>
+                      <p>See table-wise QR scans and guest engagement</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                      <h4>Generate QR codes</h4>
+                      <p>Create and download table-specific QR codes</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">🏢</div>
+                    <div>
+                      <h4>Multi-outlet support</h4>
+                      <p>Manage multiple restaurant locations</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="auth-security">
+                  <span class="security-icon">🔐</span>
+                  <p>Your data is secure and encrypted</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SIGNUP PAGE -->
+        <section id="view-signup" class="view auth-view">
+          <div class="auth-container">
+            <div class="auth-left">
+              <button class="back-link auth-back" data-route="home">
+                <span class="icon icon-back"></span>
+                Back to Home
+              </button>
+              <div class="auth-header">
+                <div class="auth-logo">
+                  <div class="brand-mark">SD</div>
+                </div>
+                <h1 class="auth-title">Create your account</h1>
+                <p class="auth-subtitle">Start your journey with ScanDine. Get your QR menu live in minutes.</p>
+              </div>
+
+              <form id="signup-form" class="auth-form">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="signup-name" class="form-label">Full name</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">👤</span>
+                      <input
+                        type="text"
+                        id="signup-name"
+                        class="form-input"
+                        placeholder="John Doe"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="signup-email" class="form-label">Email address</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">✉</span>
+                      <input
+                        type="email"
+                        id="signup-email"
+                        class="form-input"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="signup-phone" class="form-label">Phone number</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">📱</span>
+                      <input
+                        type="tel"
+                        id="signup-phone"
+                        class="form-input"
+                        placeholder="+91 98765 43210"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="signup-restaurant-name" class="form-label">Restaurant name</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">🏪</span>
+                      <input
+                        type="text"
+                        id="signup-restaurant-name"
+                        class="form-input"
+                        placeholder="Your Restaurant Name"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="signup-password" class="form-label">Password</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">🔒</span>
+                      <input
+                        type="password"
+                        id="signup-password"
+                        class="form-input"
+                        placeholder="Create a strong password"
+                        required
+                        minlength="8"
+                      />
+                    </div>
+                    <small class="form-help">Must be at least 8 characters long</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="signup-confirm-password" class="form-label">Confirm password</label>
+                    <div class="input-wrapper">
+                      <span class="input-icon">🔒</span>
+                      <input
+                        type="password"
+                        id="signup-confirm-password"
+                        class="form-input"
+                        placeholder="Re-enter your password"
+                        required
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="checkbox-label">
+                    <input type="checkbox" id="agree-terms" required />
+                    <span class="checkbox-custom"></span>
+                    <span class="checkbox-text">
+                      I agree to the
+                      <a href="#" class="inline-link">Terms of Service</a>
+                      and
+                      <a href="#" class="inline-link">Privacy Policy</a>
+                    </span>
+                  </label>
+                </div>
+
+                <button type="submit" class="auth-btn auth-btn-primary">
+                  Create Account
+                </button>
+
+                <div class="auth-divider">
+                  <span>or</span>
+                </div>
+
+                <p class="auth-switch">
+                  Already have an account?
+                  <button type="button" class="auth-link" data-route="login">
+                    Sign in here
+                  </button>
+                </p>
+              </form>
+            </div>
+
+            <div class="auth-right">
+              <div class="auth-features">
+                <h3>What you get</h3>
+                <div class="feature-list">
+                  <div class="feature-item feature-item-highlight">
+                    <div class="feature-icon">✨</div>
+                    <div>
+                      <h4>Free trial</h4>
+                      <p>14 days to explore all features</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                      <h4>Easy setup</h4>
+                      <p>Get your QR menu live in under 10 minutes</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">💳</div>
+                    <div>
+                      <h4>No credit card</h4>
+                      <p>Start free, upgrade when ready</p>
+                    </div>
+                  </div>
+                  <div class="feature-item">
+                    <div class="feature-icon">🛟</div>
+                    <div>
+                      <h4>24/7 support</h4>
+                      <p>Our team is here to help you succeed</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="auth-badge">
+                  <span class="badge-icon">✓</span>
+                  <div>
+                    <p class="badge-title">No setup fees</p>
+                    <p class="badge-text">Start with our free trial and upgrade when you're ready</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <div id="toast" class="toast hidden"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
